@@ -1,0 +1,36 @@
+body {
+  /* #1c1c1c*/
+  background-color: #292929;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  padding: 0.5rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  width: 100%;
+}
+
+canvas {
+  margin: 0.5rem;
+  background-color: #545454;
+  border-radius: 5px;
+  box-shadow: 0 4px 3px 0 #212121a8;
+}
+
+label {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+}
+
+input[type="checkbox"] {
+  background-color: black;
+  accent-color: #E91E63;
+}
