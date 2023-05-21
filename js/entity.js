@@ -89,60 +89,6 @@ class Entity {
   }
 }
 
-class AIPlayer extends Entity {
-  #jumpHeight;
-  constructor(props) {
-    super(props);
-    this.speed = props.speed || 4;
-    // this.gravityY = 5;
-    this.#jumpHeight = props.jumpHeight;
-    this.isFall = true;
-    this.isJump = false;
-  }
-
-  draw() {
-    fill('black');
-    stroke('white');
-    circle(this.x, this.y, this.size);
-
-    if(this.isJump) {
-      noFill();
-      stroke('red');
-      line(
-        this.x, this.y,
-        this.x, this.y + this.size/2 + this.#jumpHeight);
-    }
-  }
-
-  jump() {
-    if(!this.isFall) {
-      this.y -= this.#jumpHeight;
-      this.isFall = true;
-      this.isJump = true;
-    }
-  }
-
-  moveLeft() {
-    this.x -= this.speed;
-  }
-  moveRight() {
-    this.x += this.speed;
-  }
-
-  move() {
-    this.useGravity();
-    // 'SPACE' OR 'W'
-    if(!this.isFall && (keyIsDown(32) || keyIsDown(87))) {
-      player.jump();
-    }
-    // 'A'
-    if(keyIsDown(65)) player.moveLeft();
-    // 'D'
-    if(keyIsDown(68)) player.moveRight();
-  }
-
-}
-
 class Ball extends Entity{
   constructor(props) {
     super(props);

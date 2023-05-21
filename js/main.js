@@ -2,7 +2,6 @@ const w = 900, h = 600;
 const parentId = 'app';
 
 let pool = null;
-let player = null;
 // let ballImgList = [];
 let img = null;
 let checkbox = null;
